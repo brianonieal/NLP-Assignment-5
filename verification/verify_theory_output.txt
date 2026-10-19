@@ -1,0 +1,17 @@
+S2  |V|=1000, API calls=999 (limit |V|+1=1001), max |p_hat - p| = 9.71e-17, sum p_hat = 1.000000000000
+S2  Z-formula for one token: 2.078444e-05 vs true 2.078444e-05
+3.2.1 dJ_t/do_t = yhat_t - y_t matches autograd for t=1,2,3
+3.2.2 dJ_t/dh_i = (W_hh^T)^(t-i) W_yh^T (yhat_t - y_t) matches for all 6 (t, i) pairs
+3.2.3 dJ_t/dW_hh = sum_i g_h_i h_{i-1}^T matches for t=1,2,3
+3.2.4 dJ/dW_hh = sum_t g_W_hh,t matches (max abs diff 8.9e-16)
+3.2.4 one-sweep form sum_i delta_i h_(i-1)^T matches (max abs diff 2.2e-16)
+4.1 n=  128 h=64: projections    1,572,864  QK^T    1,048,576  AV    1,048,576  total     3,670,016
+4.1 n=  256 h=64: projections    3,145,728  QK^T    4,194,304  AV    4,194,304  total    11,534,336
+4.1 n=  512 h=64: projections    6,291,456  QK^T   16,777,216  AV   16,777,216  total    39,845,888
+4.1 n= 1024 h=64: projections   12,582,912  QK^T   67,108,864  AV   67,108,864  total   146,800,640
+4.3 rank(P)=12, max |PV - U(S(R^T V))| = 4.00e-15
+4.4 rank(QK^T)=12, max |PV - Q(CK)^T(DV)| = 2.84e-12 (relative 1.1e-15)
+4.4 with scaling, C = R^T/sqrt(h), D = R^T: relative error 1.1e-15
+S2  Z-formula, b=2.0: 999 biased calls, max |p_hat - p| = 1.04e-16, max relative error = 1.55e-08
+4.2 column 3 weights max 0.0e+00, row sums in [1.000000000000, 1.000000000000], rows != 3 moved 0.0e+00 when x_3 changed, row 3 moved 3.43
+all checks passed

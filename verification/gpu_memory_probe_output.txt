@@ -1,0 +1,5 @@
+number of parameters: 2.50M
+GPU: NVIDIA GeForce RTX 4050 Laptop GPU, 6.44 GB
+batch 256 as 2 chunk(s): 270 ms/step, peak 3.37 GB
+batch 256 as 4 chunk(s): 278 ms/step, peak 1.73 GB
+batch 256 as 1 chunk(s): 4667 ms/step, peak 6.62 GB

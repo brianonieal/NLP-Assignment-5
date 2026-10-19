@@ -1,0 +1,8 @@
+number of parameters: 0.11M
+running on device cpu
+running on device cpu
+chunks=2: |loss diff| = 0.00e+00, max |grad diff| = 2.95e-17 (grad scale 8.21e-02)
+running on device cpu
+chunks=3: |loss diff| = 0.00e+00, max |grad diff| = 2.08e-17 (grad scale 8.21e-02)
+unchunked GPT.forward loss 6.2212262786 vs chunked_loss(chunks=1) 6.2212262786
+all checks passed

@@ -1,3 +1,9 @@
+# GenAI disclosure: Claude (Anthropic, model claude-opus-5-5) added the micro_batches option
+# and the chunked_loss method to this file, changed the training and evaluation loops to
+# call chunked_loss, and added a blank line after the elapsed-time print. With
+# micro_batches = 1 the behavior matches the skeleton. The change only lowers peak GPU
+# memory, so the full run fits on a 6 GB laptop GPU. Everything else is the course's
+# Assignment 5 skeleton. I directed the work and reviewed it before submitting.
 import time
 from collections import defaultdict
 
@@ -23,6 +29,10 @@ class Trainer:
         C.betas = (0.9, 0.95)
         C.weight_decay = 0.1 # only applied on matmul weights
         C.grad_norm_clip = 1.0
+        # split each batch into this many equal chunks for the forward and backward pass.
+        # Each chunk's loss is weighted by its share of the batch, so the summed gradient is
+        # the full-batch gradient. It only lowers peak GPU memory (added for a 6 GB GPU).
+        C.micro_batches = 1
         return C
 
     def __init__(self, config, model, train_dataloader, dev_dataloader):
@@ -75,7 +85,7 @@ class Trainer:
             for batch in self.dev_dataloader:
                 batch = [t.to(self.device) for t in batch]
                 input_ids, labels, masks = batch
-                logits, loss = model(input_ids, labels, masks)
+                loss = self.chunked_loss(input_ids, labels, masks, backward=False)
                 valid_loss.append(loss.item())
                 valid_ppls.append(torch.exp(loss).item())
         self.valid_loss = sum(valid_loss) / len(valid_loss)
@@ -84,6 +94,25 @@ class Trainer:
         self.all_iter_valid_loss.append(self.valid_loss)
         self.all_iter_valid_ppl.append(self.valid_ppl)
         model.train()
+
+    def chunked_loss(self, input_ids, labels, masks, backward):
+        """Batch loss computed over config.micro_batches chunks.
+
+        GPT.forward returns the mean over sequences of each sequence's masked mean token
+        loss, so the full-batch loss is the size-weighted average of the chunk losses. With
+        backward=True, each chunk's weighted loss is backpropagated right away, and the
+        accumulated gradient equals the full-batch gradient.
+        """
+        n = input_ids.size(0)
+        chunks = max(1, min(self.config.micro_batches, n))
+        total = 0.0
+        for ids, lab, msk in zip(input_ids.chunk(chunks), labels.chunk(chunks), masks.chunk(chunks)):
+            _, loss = self.model(ids, lab, msk)
+            weighted = loss * (ids.size(0) / n)
+            if backward:
+                weighted.backward()
+            total = total + weighted.detach()
+        return total
 
     def plot(self):
         plt.clf()
@@ -131,11 +160,10 @@ class Trainer:
 
             # forward the model
             # logits, self.loss = model(input_ids, labels)
-            logits, self.iter_train_loss = model(input_ids, labels, masks)
-            self.iter_train_ppl = torch.exp(self.iter_train_loss)
             # backprop and update the parameters
             model.zero_grad(set_to_none=True)
-            self.iter_train_loss.backward()
+            self.iter_train_loss = self.chunked_loss(input_ids, labels, masks, backward=True)
+            self.iter_train_ppl = torch.exp(self.iter_train_loss)
             torch.nn.utils.clip_grad_norm_(model.parameters(), config.grad_norm_clip)
             self.optimizer.step()
 
@@ -153,4 +181,4 @@ class Trainer:
             if config.max_iters is not None and self.iter_num >= config.max_iters:
                 break
 
-        print(f"{'-'*10} Trainer Time Elapsed: {time.time() - start_time:.2f}s {'-'*10}")
+        print(f"{'-'*10} Trainer Time Elapsed: {time.time() - start_time:.2f}s {'-'*10}\n")

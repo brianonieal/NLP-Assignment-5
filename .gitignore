@@ -169,3 +169,19 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Added for this submission
+__pycache__/
+*.pyc
+.DS_Store
+# WikiText-103 parquet files, about 300 MB (scripts/prefetch_wikitext.py downloads them)
+data_cache/
+# the first attempt's checkpoint has the same MD5 as Assignment5/model.pth
+Assignment5/model_first_attempt.pth
+# tqdm progress bars and a Tk traceback with local paths
+Assignment5/run_stderr*.txt
+# Slurm scripts from the course's public repo, not in this template and not used here
+Assignment5/sbatch.sh
+Assignment5/test_sbatch.sh
+# media extracted from ../Assignment5.docx by writeup/build.sh
+writeup/media/

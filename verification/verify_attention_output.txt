@@ -1,0 +1,7 @@
+1. max |ours - reference| = 1.19e-07
+2. change at positions > 9: past outputs moved 0.00e+00, later outputs moved 3.25e-01
+3. row sums in [1.000000, 1.000000], max future weight 0.0e+00
+   causal_mask buffer shape (1, 1, 32, 32), lower-triangular: True
+number of parameters: 0.09M
+4. synthetic LM loss: step 0 3.921 (ln V = 3.912), step 299 0.004
+all checks passed

@@ -1,3 +1,10 @@
+# GenAI disclosure: Claude (Anthropic, model claude-opus-5-5) wrote every line that was blank
+# in the course's skeleton of this file: the causal mask and its reshape in
+# CausalSelfAttention.__init__, and in CausalSelfAttention.forward the q, k, v split, the
+# per-head reshapes, the scaled dot-product attention with the causal mask, the softmax,
+# the attention dropout, the weighted sum of the values, and the output projection.
+# Everything else is the course's Assignment 5 skeleton. I directed the work and reviewed it before
+# submitting.
 """
 Full definition of a GPT Language Model, all of it in this single file.
 """
@@ -40,11 +47,13 @@ class CausalSelfAttention(nn.Module):
         #   The matrix should has 1s in the lower left triangular part (including the diagonal) and 0s in the upper right.
         #   Name the matrix `causal_mask`
         # Hint: you can check torch.tril for creating the matrix with the help of torch.ones.
-
+        causal_mask = torch.tril(torch.ones(config.block_size, config.block_size))
+        # the provided lines below spell it `casual_mask`, so point that name at the same tensor
+        casual_mask = causal_mask
         # your code ends here
 
         # expand the mask for the batch and head dimensions
-
+        casual_mask = casual_mask.view(1, 1, config.block_size, config.block_size)
         # register the mask as a buffer so it's not updated as a model parameter
         # but can still be used in the forward pass & saved to the state_dict
         self.register_buffer("causal_mask", casual_mask)
@@ -57,7 +66,7 @@ class CausalSelfAttention(nn.Module):
         # TODO: implement the forward pass of the casual self-attention layer.
         # project the input to key, query, value vectors
         # each of shape (B, T, n_embd)
-
+        q, k ,v  = self.c_attn(x).split(self.n_embd, dim=2)
 
         # calculate query, key, values for all heads in batch and move head forward to be the batch dim
         # split q, k, v into multiple (self.n_head) heads
@@ -65,13 +74,15 @@ class CausalSelfAttention(nn.Module):
         # - splitting the n_embd dimension into [n_head, n_embd / n_head]
         # - transpose the result so that move n_head forward to be the batch dimension
         # we provide the implementation for the key projections as an example
-
+        k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, n_head, T, n_embd / n_head)
         # similarly, implement the query and value projections
-
+        q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, n_head, T, n_embd / n_head)
+        v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, n_head, T, n_embd / n_head)
 
         # causal self-attention; Self-attend: (B, n_head, T, n_embd / n_head) x (B, n_head, n_embd / n_head, T) -> (B, n_head, T, T)
         # calculate the scaled dot-product attention with causal mask, namely the attention matrix as `att`
         # step 1: q @ k^T / sqrt(d_k), where d_k is the head hidden dimension (n_embd / n_head)
+        att = (q @ k.transpose(-2, -1)) / math.sqrt(k.size(-1)) # (B, n_head, T, T)
 
         # step 2: apply the causal mask to the attention matrix
         # the masked out entries in att should have the value of float('-inf')
@@ -80,20 +91,24 @@ class CausalSelfAttention(nn.Module):
         # - don't forget to truncate the mask to the actual sequence length (T)
         # - to apply the mask, one possible way is the `torch.Tensor.masked_fill` method
         # - - for this, you can obtain the boolean mask by element-wise comparison of the causal mask with 0
+        att = att.masked_fill(self.causal_mask[:, :, :T, :T] == 0, float('-inf'))
 
         # step 3: apply the softmax function to the masked attention matrix
         # hint: you can use the `F.softmax` function
+        att = F.softmax(att, dim=-1)
 
         # step 4: apply the attention dropout (self.attn_dropout) to the attention matrix
+        att = self.attn_dropout(att)
 
         # step 5: multiply the attention matrix with value vectors
+        y = att @ v # (B, n_head, T, T) x (B, n_head, T, n_embd / n_head) -> (B, n_head, T, n_embd / n_head)
 
         # your code ends here
 
         y = y.transpose(1, 2).contiguous().view(B, T, C) # re-assemble all head outputs side by side
 
         # output projection
-
+        y = self.resid_dropout(self.c_proj(y))
         return y
 
 class Block(nn.Module):

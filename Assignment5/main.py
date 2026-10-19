@@ -1,3 +1,9 @@
+# GenAI disclosure: Claude (Anthropic, model claude-opus-5-5) made the one change in this
+# file: it set train_config.micro_batches = 2 in run() so a batch of 256 fits on a 6 GB GPU
+# without changing the gradient (see gpt/trainer.py). The cpu_gpu_comparison and
+# gpu_full_run calls at the bottom were already uncommented in the skeleton. Claude ran the
+# file on my laptop GPU. Everything else is the course's Assignment 5 skeleton. I directed the work
+# and reviewed it before submitting.
 from data import load_data, create_datasets, create_dataloader, VOCAB_SIZE
 import torch
 from gpt.model import GPT
@@ -51,6 +57,7 @@ def run(train_dataset, dev_dataset, max_iter=1, device='cpu', plot=True, sample=
     train_config.max_iters = max_iter
     train_config.num_workers = 0
     train_config.device = device
+    train_config.micro_batches = 2  # two chunks of 128 per batch of 256, same gradient (see trainer.py)
     trainer = Trainer(train_config, model, train_dataloader, dev_dataloader)
     trainer.set_callback('on_batch_end', batch_end_callback)
     trainer.set_callback('on_validation_end', evaluation_callback)

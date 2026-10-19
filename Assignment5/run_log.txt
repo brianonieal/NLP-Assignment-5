@@ -1,0 +1,274 @@
+---------- Load Dataset ----------
+(local) train: ['train-00000-of-00002.parquet', 'train-00001-of-00002.parquet']
+(local) validation: ['validation-00000-of-00001.parquet']
+number of parameters: 2.50M
+running on device cpu
+iter 0: validation loss 10.82717 validation ppl 50371.099
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.82913 train ppl 50469.883
+---------- Trainer Time Elapsed: 156.88s ----------
+
+number of parameters: 2.50M
+running on device cuda
+iter 0: validation loss 10.83329 validation ppl 50680.573
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83462 train ppl 50747.742
+---------- Trainer Time Elapsed: 10.65s ----------
+
+number of parameters: 2.50M
+running on device cuda
+iter 0: validation loss 10.83061 validation ppl 50544.528
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83509 train ppl 50771.316
+iter_dt 20.90s; iter 100: train loss 8.28659 train ppl 3970.275
+iter_dt 20.77s; iter 200: train loss 7.06448 train ppl 1169.670
+iter_dt 21.29s; iter 300: train loss 6.46513 train ppl 642.346
+iter_dt 20.88s; iter 400: train loss 6.15983 train ppl 473.350
+iter_dt 21.01s; iter 500: train loss 6.24561 train ppl 515.743
+iter_dt 20.72s; iter 600: train loss 5.97043 train ppl 391.674
+iter_dt 20.82s; iter 700: train loss 5.92213 train ppl 373.206
+iter_dt 20.76s; iter 800: train loss 5.73754 train ppl 310.301
+iter_dt 20.92s; iter 900: train loss 5.88034 train ppl 357.932
+iter 1000: validation loss 5.66786 validation ppl 294.047
+best model so far, saving...
+iter_dt 21.15s; iter 1000: train loss 5.69662 train ppl 297.858
+iter_dt 20.87s; iter 1100: train loss 5.84499 train ppl 345.499
+iter_dt 21.28s; iter 1200: train loss 5.68608 train ppl 294.737
+iter_dt 20.71s; iter 1300: train loss 5.61202 train ppl 273.697
+iter_dt 20.84s; iter 1400: train loss 5.54346 train ppl 255.559
+iter_dt 20.94s; iter 1500: train loss 5.56646 train ppl 261.508
+iter_dt 20.83s; iter 1600: train loss 5.58010 train ppl 265.098
+iter_dt 20.83s; iter 1700: train loss 5.71111 train ppl 302.206
+iter_dt 21.41s; iter 1800: train loss 5.56802 train ppl 261.915
+iter_dt 21.15s; iter 1900: train loss 5.54376 train ppl 255.638
+iter 2000: validation loss 5.38459 validation ppl 222.172
+best model so far, saving...
+iter_dt 21.62s; iter 2000: train loss 5.48238 train ppl 240.419
+iter_dt 20.97s; iter 2100: train loss 5.52110 train ppl 249.909
+iter_dt 21.34s; iter 2200: train loss 5.63248 train ppl 279.355
+iter_dt 21.86s; iter 2300: train loss 5.43571 train ppl 229.455
+iter_dt 20.73s; iter 2400: train loss 5.37270 train ppl 215.444
+iter_dt 21.51s; iter 2500: train loss 5.39547 train ppl 220.406
+iter_dt 21.02s; iter 2600: train loss 5.42090 train ppl 226.082
+iter_dt 21.42s; iter 2700: train loss 5.57062 train ppl 262.596
+iter_dt 21.13s; iter 2800: train loss 5.34819 train ppl 210.228
+iter_dt 21.24s; iter 2900: train loss 5.37666 train ppl 216.299
+iter 3000: validation loss 5.21443 validation ppl 187.702
+best model so far, saving...
+iter_dt 21.69s; iter 3000: train loss 5.52636 train ppl 251.228
+iter_dt 21.65s; iter 3100: train loss 5.32070 train ppl 204.527
+iter_dt 21.07s; iter 3200: train loss 5.44133 train ppl 230.748
+iter_dt 21.57s; iter 3300: train loss 5.36937 train ppl 214.727
+iter_dt 21.21s; iter 3400: train loss 5.30042 train ppl 200.422
+iter_dt 21.33s; iter 3500: train loss 5.33726 train ppl 207.941
+iter_dt 20.77s; iter 3600: train loss 5.37169 train ppl 215.226
+iter_dt 21.24s; iter 3700: train loss 5.39076 train ppl 219.369
+iter_dt 20.95s; iter 3800: train loss 5.35738 train ppl 212.168
+iter_dt 20.97s; iter 3900: train loss 5.35039 train ppl 210.691
+iter 4000: validation loss 5.11182 validation ppl 169.670
+best model so far, saving...
+iter_dt 22.86s; iter 4000: train loss 5.32130 train ppl 204.649
+iter_dt 21.09s; iter 4100: train loss 5.27699 train ppl 195.779
+iter_dt 20.80s; iter 4200: train loss 5.07504 train ppl 159.979
+iter_dt 20.84s; iter 4300: train loss 5.27453 train ppl 195.298
+iter_dt 21.52s; iter 4400: train loss 5.21965 train ppl 184.869
+iter_dt 21.11s; iter 4500: train loss 5.09643 train ppl 163.437
+iter_dt 21.76s; iter 4600: train loss 5.14469 train ppl 171.518
+iter_dt 21.36s; iter 4700: train loss 5.21082 train ppl 183.244
+iter_dt 21.04s; iter 4800: train loss 5.16710 train ppl 175.405
+iter_dt 21.59s; iter 4900: train loss 5.30691 train ppl 201.725
+iter 5000: validation loss 5.03593 validation ppl 157.494
+best model so far, saving...
+iter_dt 21.53s; iter 5000: train loss 5.17186 train ppl 176.242
+iter_dt 21.40s; iter 5100: train loss 5.23995 train ppl 188.661
+iter_dt 21.18s; iter 5200: train loss 5.20834 train ppl 182.791
+iter_dt 21.54s; iter 5300: train loss 5.03734 train ppl 154.060
+iter_dt 21.09s; iter 5400: train loss 5.30838 train ppl 202.023
+iter_dt 20.88s; iter 5500: train loss 5.15335 train ppl 173.009
+iter_dt 21.11s; iter 5600: train loss 5.11648 train ppl 166.748
+iter_dt 21.12s; iter 5700: train loss 5.07078 train ppl 159.298
+iter_dt 20.74s; iter 5800: train loss 5.12762 train ppl 168.616
+iter_dt 20.83s; iter 5900: train loss 5.10494 train ppl 164.835
+iter 6000: validation loss 4.98818 validation ppl 150.203
+best model so far, saving...
+iter_dt 20.90s; iter 6000: train loss 5.11476 train ppl 166.461
+iter_dt 20.75s; iter 6100: train loss 5.42129 train ppl 226.170
+iter_dt 20.70s; iter 6200: train loss 5.17171 train ppl 176.215
+iter_dt 20.90s; iter 6300: train loss 4.96611 train ppl 143.468
+iter_dt 20.89s; iter 6400: train loss 5.17353 train ppl 176.536
+iter_dt 20.83s; iter 6500: train loss 5.06057 train ppl 157.681
+iter_dt 20.96s; iter 6600: train loss 5.21282 train ppl 183.611
+iter_dt 20.76s; iter 6700: train loss 5.14566 train ppl 171.685
+iter_dt 20.86s; iter 6800: train loss 4.98008 train ppl 145.486
+iter_dt 20.76s; iter 6900: train loss 5.21719 train ppl 184.414
+iter 7000: validation loss 4.95691 validation ppl 145.795
+best model so far, saving...
+iter_dt 20.90s; iter 7000: train loss 5.22244 train ppl 185.386
+iter_dt 20.85s; iter 7100: train loss 5.27039 train ppl 194.492
+iter_dt 20.79s; iter 7200: train loss 5.25610 train ppl 191.732
+iter_dt 20.77s; iter 7300: train loss 5.25009 train ppl 190.584
+iter_dt 20.95s; iter 7400: train loss 5.13863 train ppl 170.482
+iter_dt 21.26s; iter 7500: train loss 5.17594 train ppl 176.962
+iter_dt 21.80s; iter 7600: train loss 5.06166 train ppl 157.853
+iter_dt 21.66s; iter 7700: train loss 4.99438 train ppl 147.581
+iter_dt 21.77s; iter 7800: train loss 5.25407 train ppl 191.343
+iter_dt 21.28s; iter 7900: train loss 5.08652 train ppl 161.825
+iter 8000: validation loss 4.93181 validation ppl 142.161
+best model so far, saving...
+iter_dt 21.42s; iter 8000: train loss 5.10340 train ppl 164.581
+iter_dt 21.02s; iter 8100: train loss 5.20424 train ppl 182.043
+iter_dt 20.94s; iter 8200: train loss 5.02720 train ppl 152.506
+iter_dt 21.57s; iter 8300: train loss 5.11460 train ppl 166.434
+iter_dt 21.28s; iter 8400: train loss 5.15030 train ppl 172.483
+iter_dt 20.90s; iter 8500: train loss 5.02954 train ppl 152.863
+iter_dt 20.95s; iter 8600: train loss 4.84932 train ppl 127.654
+iter_dt 20.99s; iter 8700: train loss 5.11351 train ppl 166.254
+iter_dt 21.34s; iter 8800: train loss 5.12979 train ppl 168.982
+iter_dt 20.74s; iter 8900: train loss 4.98976 train ppl 146.901
+iter 9000: validation loss 4.91363 validation ppl 139.654
+best model so far, saving...
+iter_dt 21.55s; iter 9000: train loss 5.01664 train ppl 150.903
+iter_dt 21.22s; iter 9100: train loss 5.02017 train ppl 151.436
+iter_dt 20.96s; iter 9200: train loss 4.97099 train ppl 144.169
+iter_dt 21.01s; iter 9300: train loss 4.91920 train ppl 136.894
+iter_dt 21.14s; iter 9400: train loss 4.88651 train ppl 132.491
+iter_dt 21.03s; iter 9500: train loss 5.05763 train ppl 157.217
+iter_dt 20.78s; iter 9600: train loss 5.04275 train ppl 154.895
+iter_dt 21.44s; iter 9700: train loss 4.97682 train ppl 145.013
+iter_dt 20.96s; iter 9800: train loss 5.12968 train ppl 168.964
+iter_dt 20.90s; iter 9900: train loss 5.02482 train ppl 152.142
+iter 10000: validation loss 4.89559 validation ppl 137.243
+best model so far, saving...
+iter_dt 20.85s; iter 10000: train loss 5.06051 train ppl 157.671
+iter_dt 20.84s; iter 10100: train loss 5.12975 train ppl 168.975
+iter_dt 21.25s; iter 10200: train loss 5.16487 train ppl 175.014
+iter_dt 20.96s; iter 10300: train loss 5.25750 train ppl 192.001
+iter_dt 21.23s; iter 10400: train loss 5.25287 train ppl 191.114
+iter_dt 21.28s; iter 10500: train loss 5.10052 train ppl 164.108
+iter_dt 21.21s; iter 10600: train loss 5.10991 train ppl 165.656
+iter_dt 20.98s; iter 10700: train loss 5.01381 train ppl 150.477
+iter_dt 20.71s; iter 10800: train loss 4.91003 train ppl 135.643
+iter_dt 21.51s; iter 10900: train loss 5.08527 train ppl 161.624
+iter 11000: validation loss 4.88011 validation ppl 135.155
+best model so far, saving...
+iter_dt 21.42s; iter 11000: train loss 5.06128 train ppl 157.792
+iter_dt 21.05s; iter 11100: train loss 5.03996 train ppl 154.464
+iter_dt 21.19s; iter 11200: train loss 5.05812 train ppl 157.294
+iter_dt 20.67s; iter 11300: train loss 5.15870 train ppl 173.938
+iter_dt 20.87s; iter 11400: train loss 4.97872 train ppl 145.289
+iter_dt 20.83s; iter 11500: train loss 5.08042 train ppl 160.841
+iter_dt 21.10s; iter 11600: train loss 5.23221 train ppl 187.207
+iter_dt 20.72s; iter 11700: train loss 5.01397 train ppl 150.501
+iter_dt 20.72s; iter 11800: train loss 4.78376 train ppl 119.553
+iter_dt 20.79s; iter 11900: train loss 5.08391 train ppl 161.404
+iter 12000: validation loss 4.87012 validation ppl 133.831
+best model so far, saving...
+iter_dt 20.90s; iter 12000: train loss 5.02349 train ppl 151.941
+iter_dt 20.97s; iter 12100: train loss 5.03829 train ppl 154.206
+iter_dt 20.88s; iter 12200: train loss 5.07715 train ppl 160.317
+iter_dt 21.03s; iter 12300: train loss 5.13942 train ppl 170.617
+iter_dt 21.28s; iter 12400: train loss 5.09043 train ppl 162.459
+iter_dt 21.09s; iter 12500: train loss 5.03077 train ppl 153.050
+iter_dt 21.08s; iter 12600: train loss 4.84268 train ppl 126.808
+iter_dt 20.89s; iter 12700: train loss 4.91215 train ppl 135.931
+iter_dt 21.53s; iter 12800: train loss 4.97307 train ppl 144.470
+iter_dt 20.88s; iter 12900: train loss 5.11930 train ppl 167.218
+iter 13000: validation loss 4.86445 validation ppl 133.157
+best model so far, saving...
+iter_dt 20.91s; iter 13000: train loss 5.15721 train ppl 173.679
+iter_dt 21.03s; iter 13100: train loss 5.06776 train ppl 158.818
+iter_dt 20.89s; iter 13200: train loss 5.06672 train ppl 158.653
+iter_dt 21.05s; iter 13300: train loss 4.94640 train ppl 140.668
+iter_dt 20.84s; iter 13400: train loss 5.10135 train ppl 164.243
+iter_dt 21.39s; iter 13500: train loss 5.14665 train ppl 171.856
+iter_dt 21.01s; iter 13600: train loss 5.03992 train ppl 154.458
+iter_dt 21.12s; iter 13700: train loss 5.00264 train ppl 148.805
+iter_dt 21.16s; iter 13800: train loss 5.01779 train ppl 151.076
+iter_dt 20.94s; iter 13900: train loss 5.11285 train ppl 166.143
+iter 14000: validation loss 4.85952 validation ppl 132.385
+best model so far, saving...
+iter_dt 21.41s; iter 14000: train loss 4.98677 train ppl 146.463
+iter_dt 20.71s; iter 14100: train loss 4.98250 train ppl 145.838
+iter_dt 21.27s; iter 14200: train loss 5.00184 train ppl 148.687
+iter_dt 20.97s; iter 14300: train loss 5.16130 train ppl 174.390
+iter_dt 21.00s; iter 14400: train loss 4.82484 train ppl 124.567
+iter_dt 20.83s; iter 14500: train loss 5.05383 train ppl 156.621
+iter_dt 20.82s; iter 14600: train loss 5.05097 train ppl 156.174
+iter_dt 20.92s; iter 14700: train loss 4.99855 train ppl 148.199
+iter_dt 20.73s; iter 14800: train loss 5.00471 train ppl 149.114
+iter_dt 20.75s; iter 14900: train loss 5.09489 train ppl 163.186
+iter 15000: validation loss 4.85610 validation ppl 131.903
+best model so far, saving...
+iter_dt 20.69s; iter 15000: train loss 5.02924 train ppl 152.817
+iter_dt 21.19s; iter 15100: train loss 5.12433 train ppl 168.061
+iter_dt 20.90s; iter 15200: train loss 5.06720 train ppl 158.729
+iter_dt 20.70s; iter 15300: train loss 5.12205 train ppl 167.678
+iter_dt 20.69s; iter 15400: train loss 5.02001 train ppl 151.413
+iter_dt 20.83s; iter 15500: train loss 4.89318 train ppl 133.377
+iter_dt 21.06s; iter 15600: train loss 4.94710 train ppl 140.766
+iter_dt 21.59s; iter 15700: train loss 5.14070 train ppl 170.835
+iter_dt 20.74s; iter 15800: train loss 4.91741 train ppl 136.649
+iter_dt 20.76s; iter 15900: train loss 5.10440 train ppl 164.745
+iter 16000: validation loss 4.84814 validation ppl 130.869
+best model so far, saving...
+iter_dt 20.88s; iter 16000: train loss 5.20142 train ppl 181.530
+iter_dt 21.17s; iter 16100: train loss 5.07546 train ppl 160.046
+iter_dt 20.76s; iter 16200: train loss 4.79387 train ppl 120.768
+iter_dt 20.76s; iter 16300: train loss 5.05768 train ppl 157.225
+iter_dt 21.17s; iter 16400: train loss 4.90742 train ppl 135.290
+iter_dt 20.80s; iter 16500: train loss 5.15366 train ppl 173.064
+iter_dt 21.15s; iter 16600: train loss 5.04619 train ppl 155.429
+iter_dt 20.71s; iter 16700: train loss 4.90377 train ppl 134.797
+iter_dt 21.04s; iter 16800: train loss 4.94478 train ppl 140.439
+iter_dt 21.13s; iter 16900: train loss 4.90136 train ppl 134.473
+iter 17000: validation loss 4.84328 validation ppl 130.230
+best model so far, saving...
+iter_dt 21.12s; iter 17000: train loss 4.89113 train ppl 133.104
+iter_dt 20.70s; iter 17100: train loss 5.11576 train ppl 166.627
+iter_dt 21.03s; iter 17200: train loss 5.24536 train ppl 189.684
+iter_dt 20.76s; iter 17300: train loss 5.03340 train ppl 153.454
+iter_dt 21.02s; iter 17400: train loss 5.09639 train ppl 163.431
+iter_dt 21.24s; iter 17500: train loss 5.04404 train ppl 155.095
+iter_dt 20.84s; iter 17600: train loss 5.05879 train ppl 157.401
+iter_dt 21.04s; iter 17700: train loss 4.96591 train ppl 143.439
+iter_dt 21.26s; iter 17800: train loss 5.05080 train ppl 156.147
+iter_dt 20.62s; iter 17900: train loss 5.05082 train ppl 156.150
+iter 18000: validation loss 4.84232 validation ppl 130.191
+best model so far, saving...
+iter_dt 21.06s; iter 18000: train loss 4.90555 train ppl 135.038
+iter_dt 21.12s; iter 18100: train loss 5.07599 train ppl 160.131
+iter_dt 20.77s; iter 18200: train loss 5.05896 train ppl 157.426
+iter_dt 21.01s; iter 18300: train loss 5.05763 train ppl 157.217
+iter_dt 20.90s; iter 18400: train loss 4.94232 train ppl 140.094
+iter_dt 21.31s; iter 18500: train loss 5.10188 train ppl 164.331
+iter_dt 20.83s; iter 18600: train loss 5.22761 train ppl 186.348
+iter_dt 20.92s; iter 18700: train loss 5.00010 train ppl 148.429
+iter_dt 20.89s; iter 18800: train loss 4.93772 train ppl 139.452
+iter_dt 21.48s; iter 18900: train loss 5.11261 train ppl 166.103
+iter 19000: validation loss 4.83716 validation ppl 129.535
+best model so far, saving...
+iter_dt 20.86s; iter 19000: train loss 5.09838 train ppl 163.757
+iter_dt 20.82s; iter 19100: train loss 4.99527 train ppl 147.713
+iter_dt 21.22s; iter 19200: train loss 4.86861 train ppl 130.140
+iter_dt 21.50s; iter 19300: train loss 4.95716 train ppl 142.189
+iter_dt 20.73s; iter 19400: train loss 5.07415 train ppl 159.836
+iter_dt 20.82s; iter 19500: train loss 5.07644 train ppl 160.203
+iter_dt 20.63s; iter 19600: train loss 5.02479 train ppl 152.138
+iter_dt 20.96s; iter 19700: train loss 4.97082 train ppl 144.145
+iter_dt 20.77s; iter 19800: train loss 5.04691 train ppl 155.540
+iter_dt 21.13s; iter 19900: train loss 4.94312 train ppl 140.207
+iter 20000: validation loss 4.83354 validation ppl 128.964
+best model so far, saving...
+---------- Trainer Time Elapsed: 4254.87s ----------
+
+saved curves.json
+--------------------------------------------------------------------------------
+ The best perks of living on the east of the United States under the island , it moved a time of the river to the westbound lanes and north side . 
+ as the highway route
+--------------------------------------------------------------------------------
+ It is a truth universally acknowledged that we had a child , a character and a child . " 
+ that may only come out a lot for some of her life 's death
+--------------------------------------------------------------------------------
+ The best way to learn to prevent the rest of the season ( one ) by Mascoy , later on the second side of the first time , a " This game .
+--------------------------------------------------------------------------------
+ According to the latest research in the English Civil War to its official public economy , its name was published as part of the National Academy of the country , or the original Greek Republic

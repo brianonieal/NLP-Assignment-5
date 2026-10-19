@@ -1,0 +1,49 @@
+number of parameters: 2.50M
+parameters: 4,911,120 in all, 2,498,784 without lm_head, 2,412,336 in lm_head
+torch 2.1.0+cu121, CPU threads 16, GPU NVIDIA GeForce RTX 4050 Laptop GPU
+---------- Load Dataset ----------
+number of parameters: 2.50M
+running on device cpu
+iter 0: validation loss 10.82778 validation ppl 50402.132
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.82681 train ppl 50352.965
+---------- Trainer Time Elapsed: 117.41s ----------
+repeat 1 cpu: 117.41 s
+number of parameters: 2.50M
+running on device cuda
+iter 0: validation loss 10.83565 validation ppl 50800.116
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83511 train ppl 50772.285
+---------- Trainer Time Elapsed: 13.98s ----------
+repeat 1 cuda: 13.98 s
+number of parameters: 2.50M
+running on device cpu
+iter 0: validation loss 10.82920 validation ppl 50473.706
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.82808 train ppl 50417.062
+---------- Trainer Time Elapsed: 107.36s ----------
+repeat 2 cpu: 107.36 s
+number of parameters: 2.50M
+running on device cuda
+iter 0: validation loss 10.83357 validation ppl 50694.361
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83740 train ppl 50888.824
+---------- Trainer Time Elapsed: 13.77s ----------
+repeat 2 cuda: 13.77 s
+number of parameters: 2.50M
+running on device cpu
+iter 0: validation loss 10.83547 validation ppl 50791.097
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83429 train ppl 50731.047
+---------- Trainer Time Elapsed: 114.94s ----------
+repeat 3 cpu: 114.94 s
+number of parameters: 2.50M
+running on device cuda
+iter 0: validation loss 10.83589 validation ppl 50812.408
+best model so far, saving...
+iter_dt 0.00s; iter 0: train loss 10.83762 train ppl 50900.035
+---------- Trainer Time Elapsed: 13.80s ----------
+repeat 3 cuda: 13.80 s
+cpu: 117.41, 107.36, 114.94 s, median 114.94 s
+cuda: 13.98, 13.77, 13.80 s, median 13.80 s
+CPU/GPU per repeat: 8.4, 7.8, 8.3, median 8.3
